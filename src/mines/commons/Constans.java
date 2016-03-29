@@ -33,6 +33,7 @@ public class Constans {
     public final static int VERTICAL_MARGIN = 119;
 
     public final static int ONE_SECOND = 1000;
+    public final static int HINT_TIME = 1500;
 
     public final static int HINT_KEY_CODE = 72;
     public final static int NUMBER_OF_HINTS = 3;

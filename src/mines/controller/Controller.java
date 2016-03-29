@@ -27,6 +27,7 @@ public class Controller {
     final private Model model;
     final private View view;
     private Timer timer;
+    private Timer hintTimer;
 
     /**
      * Tworzy obiekt typu Controller
@@ -47,16 +48,16 @@ public class Controller {
      */
     private void setTimer() {
         timer = new Timer(Constans.ONE_SECOND, (ActionEvent event) -> {
-            if (!model.isPausa()) {
-                view.updateSaperTime(model.getTime());
-                model.incrementTime();
-
-            }
-
+            view.updateSaperTime(model.getTime());
+            model.incrementTime();
             view.drawSaperPanel(model.getPack());
-
         });
         timer.start();
+
+        hintTimer = new Timer(Constans.HINT_TIME, (ActionEvent e) -> {
+            model.endHindOrPausa();
+            hintTimer.stop();
+        });
     }
 
     /**
@@ -84,7 +85,10 @@ public class Controller {
 
         //Pokazanie wszystkich min.
         view.addHintMinesListener((ActionEvent e) -> {
-            model.activHint();
+            if (!model.isPausa()) {
+                model.activHint();
+                hintTimer.start();
+            }
             view.drawSaperPanel(model.getPack());
         });
 
@@ -163,7 +167,7 @@ public class Controller {
             int eY = (e.getY() / Constans.FIELD_SIZE);
             int eX = (e.getX() / Constans.FIELD_SIZE);
             if (e.getButton() == MouseEvent.BUTTON1) {
-                
+
                 if (model.defuseField(eY, eX)) {
                     view.updateFacePanel(false);
                     if (view.getDefuseDecision() == false || model.canDefuse() == false) {
@@ -180,7 +184,6 @@ public class Controller {
 
             view.drawSaperPanel(model.getPack());
             view.updateFacePanel(model.isWin(), model.isLose());
-            
 
         }
 

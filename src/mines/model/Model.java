@@ -198,13 +198,13 @@ public class Model {
      * Zwiększa czas gry
      */
     public void incrementTime() {
-        if (status == Status.HINT) {
-            status = Status.PLAYING;
-        }
         if (status == Status.PLAYING) {
             time.incrementSecond();
         }
-
+    }
+    
+    public void endHindOrPausa(){
+        status=Status.PLAYING;
     }
 
     public boolean isWin() {
@@ -219,10 +219,6 @@ public class Model {
         return status == Status.PAUSE;
     }
     
-    public boolean isHint() {
-        return status == Status.HINT;
-    }
-
     /**
      * Obsługa wskaz. odkrycia min
      */

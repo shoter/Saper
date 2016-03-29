@@ -8,8 +8,6 @@ package mines.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Timer;
 import mines.commons.Constans;
 import mines.commons.NewBoardPack;
@@ -138,6 +136,7 @@ public class Controller {
         if ((model.isLose() || model.isWin())) {
             view.updateFacePanel(false);
             view.updateFacePanel(model.isWin(), model.isLose());
+            view.drawSaperPanel(model.getPack());
             if (view.playAgain(model.isWin())) {
                 restartGame();
             } else {
@@ -180,23 +179,26 @@ public class Controller {
             checkGameEnd();
 
             view.drawSaperPanel(model.getPack());
-            
             view.updateFacePanel(model.isWin(), model.isLose());
             
 
         }
 
+        @Override
         public void mouseClicked(MouseEvent e) {
 
         }
 
+        @Override
         public void mouseEntered(MouseEvent e) {
 
         }
 
+        @Override
         public void mouseExited(MouseEvent arg0) {
         }
 
+        @Override
         public void mouseReleased(MouseEvent e) {
             view.updateFacePanel(false);
             view.updateFacePanel(model.isWin(), model.isLose());

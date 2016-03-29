@@ -33,6 +33,7 @@ public class FlagsPanel extends javax.swing.JPanel {
         repaint();
     }
     
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(loader.getImage((leftToMark/1000)%10), 0, 0, this);

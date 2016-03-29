@@ -72,7 +72,7 @@ public class Model {
         status = Status.BEGUN;
         board = new Board(boardPack.height, boardPack.width, boardPack.mines);
         time.setTime(0);
-        packConverter = new PackConverter(board, time);
+        packConverter = new PackConverter(board);
         hintControl = new HintControl(boardPack.showMineEnable);
         defuseMine = new DefuseMine(boardPack.defuseMineEnable);
         safeCheck = new SafeCheck();

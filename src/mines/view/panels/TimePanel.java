@@ -15,7 +15,7 @@ import mines.view.ImgNumberLoader;
  */
 public class TimePanel extends javax.swing.JPanel {
 
-    private ImgNumberLoader loader;
+    private final ImgNumberLoader loader;
     private int second;
     
     public TimePanel() {
@@ -24,8 +24,8 @@ public class TimePanel extends javax.swing.JPanel {
     }
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(loader.getImage(((second-second%60)/60)%10), 0, 0, this);
-        g.drawImage(loader.getImage(((second-second%60)/60)/10), Constans.NUMBER_WIDTH, 0, this);
+        g.drawImage(loader.getImage(((second-second%60)/60)/10), 0, 0, this);
+        g.drawImage(loader.getImage(((second-second%60)/60)%10), Constans.NUMBER_WIDTH, 0, this);
         g.drawImage(loader.getImage(10),Constans.NUMBER_WIDTH*2 , 0, this);
         g.drawImage(loader.getImage(((second-second%10)/10)%6),Constans.NUMBER_WIDTH/3+Constans.NUMBER_WIDTH*2, 0, this);
         g.drawImage(loader.getImage(second%10),Constans.NUMBER_WIDTH/3+Constans.NUMBER_WIDTH*3, 0, this);
@@ -34,7 +34,6 @@ public class TimePanel extends javax.swing.JPanel {
     public void setTimeInfo(int second){
         this.second=second;
         repaint();
-        //timeLabel.setText("[" + (second / 60) + ":" + (second % 60 < 10 ? "0" : "") + (second % 60) + "]");
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -15,11 +15,9 @@ import mines.model.board.Board;
 public class PackConverter {
     
     private final Board board;
-    private final Time time;
 
-    public PackConverter(Board board, Time time) {
+    public PackConverter(Board board) {
         this.board = board;
-        this.time = time;
     }
 
     /**

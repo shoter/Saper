@@ -55,7 +55,6 @@ public class StartGameDialog extends javax.swing.JDialog {
 
     public NewBoardPack getNewBoardPack() {
         NewBoardPack temp = this.customDialog.getNewBoardPack();
-        System.out.println(customDialog.getReturnStatus());
         if (customDialog.getReturnStatus() == 0) {
             if (this.beginnerButton.isSelected()) {
                 temp = NewBoardPack.BEGINNER_PACK;

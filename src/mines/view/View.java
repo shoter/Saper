@@ -3,6 +3,7 @@ package mines.view;
 import mines.view.dialogs.CustomDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.event.EventListenerList;
 import mines.commons.Constans;
@@ -21,40 +22,41 @@ import mines.view.dialogs.StartGameDialog;
 public class View extends javax.swing.JFrame {
 
     EventListenerList list = new EventListenerList();
-    NewBoardPack lastBoard=NewBoardPack.BEGINNER_PACK;
+    NewBoardPack lastBoard = NewBoardPack.BEGINNER_PACK;
+
     /**
      * Creates new form View
      */
     public View() {
         customDialog = new CustomDialog(this, true);
-        endGameDialog = new EndGameDialog(this,true);
-        defuseDialog=new DefuseDialog(this,true);
-        startGameDialog=new StartGameDialog(this,true);
-        
+        endGameDialog = new EndGameDialog(this, true);
+        defuseDialog = new DefuseDialog(this, true);
+        startGameDialog = new StartGameDialog(this, true);
+
         initComponents();
         setListeners();
-        setSaperSize(lastBoard.height,lastBoard.width);
+        setSaperSize(lastBoard.height, lastBoard.width);
     }
 
-    public void showStartGameDialog(){
+    public void showStartGameDialog() {
         startGameDialog.setVisible(true);
         fireNewBoardEvent(startGameDialog.getNewBoardPack());
-        
+
     }
-    
+
     private void setListeners() {
         customButton.addActionListener((ActionEvent e) -> {
             customDialog.setVisible(true);
         });
-        
+
         customDialog.addOkButtonListener((ActionEvent e) -> {
             fireNewBoardEvent(customDialog.getNewBoardPack());
         });
-        
+
         beginnerButton.addActionListener((ActionEvent e) -> {
             fireNewBoardEvent(NewBoardPack.BEGINNER_PACK);
         });
-        
+
         mediumButton.addActionListener((ActionEvent e) -> {
             fireNewBoardEvent(NewBoardPack.MEDIUM_PACK);
         });
@@ -62,18 +64,21 @@ public class View extends javax.swing.JFrame {
         expertButton.addActionListener((ActionEvent e) -> {
             fireNewBoardEvent(NewBoardPack.EXPERT_PACK);
         });
-        newGameButton.addActionListener((ActionEvent e)->{
+        
+        facePanel1.addMouseListener(new FacePanelListener());
+        
+        newGameButton.addActionListener((ActionEvent e) -> {
             fireNewBoardEvent(lastBoard);
         });
-        modernButton.addActionListener((ActionEvent e)->{
+        modernButton.addActionListener((ActionEvent e) -> {
             facePanel1.changeStyle(false);
-            facePanel1.drawSaperFace(false,false);
+            facePanel1.drawSaperFace(false, false);
         });
-        oldStyleButton.addActionListener((ActionEvent e)->{
+        oldStyleButton.addActionListener((ActionEvent e) -> {
             facePanel1.changeStyle(true);
-            facePanel1.drawSaperFace(false,false);
+            facePanel1.drawSaperFace(false, false);
         });
-        
+
     }
 
     public void addNewBoardListener(NewBoardListener nbl) {
@@ -82,9 +87,9 @@ public class View extends javax.swing.JFrame {
     }
 
     final protected void fireNewBoardEvent(NewBoardPack newBoard) {
-        
+
         Object[] listeners = list.getListenerList();
-        lastBoard=newBoard;
+        lastBoard = newBoard;
         NewBoardEvent nbe = new NewBoardEvent(this, newBoard);
         for (int i = 0; i < listeners.length; i++) {
             if (listeners[i] == NewBoardListener.class) {
@@ -92,7 +97,7 @@ public class View extends javax.swing.JFrame {
             }
         }
     }
-    
+
     public void addPanelListener(MouseListener ml) {
         minesPanel1.addMouseListener(ml);
     }
@@ -102,7 +107,6 @@ public class View extends javax.swing.JFrame {
         startGameDialog.addExitListener(al);
     }
 
-
     public void addHintMinesListener(ActionListener al) {
         showMinesButton.addActionListener(al);
     }
@@ -110,7 +114,7 @@ public class View extends javax.swing.JFrame {
     public void addSafeCheckListener(ActionListener al) {
         safeMoveButton.addActionListener(al);
     }
-    
+
     public void setSafeCheckEnable(final boolean safeCheckEnable) {
         safeMoveButton.setEnabled(safeCheckEnable);
     }
@@ -118,16 +122,16 @@ public class View extends javax.swing.JFrame {
     public void setHintMineEnable(final boolean showMineEnable) {
         showMinesButton.setEnabled(showMineEnable);
     }
-    
-    public void updateFacePanel(boolean isWin,boolean isLose){
+
+    public void updateFacePanel(boolean isWin, boolean isLose) {
         facePanel1.drawSaperFace(isWin, isLose);
     }
-    
-    public void updateFacePanel(boolean isPressed){
+
+    public void updateFacePanel(boolean isPressed) {
         facePanel1.drawSaperFace(isPressed);
     }
-    
-    public void addCustomDialogExitListener(ActionListener al){
+
+    public void addCustomDialogExitListener(ActionListener al) {
         customDialog.addCancelButtonListener(al);
     }
 
@@ -148,14 +152,14 @@ public class View extends javax.swing.JFrame {
      * @param p
      */
     public void drawSaperPanel(MinesPack p) {
-        flagsPanel1.setMarkedInfo(p.fieldsMarked,p.numbOfMines);
+        flagsPanel1.setMarkedInfo(p.fieldsMarked, p.numbOfMines);
         minesPanel1.drawSaperFields(p);
     }
-    
-    public void updateSaperTime(int time){
+
+    public void updateSaperTime(int time) {
         timePanel1.setTimeInfo(time);
     }
-    
+
     public void addMenuPauseListen(ActionListener al) {
         pauseGameButton.addActionListener(al);
         customButton.addActionListener(al);
@@ -353,4 +357,30 @@ public class View extends javax.swing.JFrame {
     private final EndGameDialog endGameDialog;
     private final DefuseDialog defuseDialog;
     private final StartGameDialog startGameDialog;
+
+    private class FacePanelListener implements MouseListener {
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            fireNewBoardEvent(lastBoard);
+            facePanel1.drawSaperFace(true);
+            facePanel1.drawSaperFace(false,false);
+        }
+
+        public void mouseClicked(MouseEvent e) {
+
+        }
+
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        public void mouseExited(MouseEvent arg0) {
+        }
+
+        public void mouseReleased(MouseEvent e) {
+            facePanel1.drawSaperFace(false);
+            facePanel1.drawSaperFace(false,false);
+        }
+    }
 }

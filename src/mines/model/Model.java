@@ -1,12 +1,12 @@
 package mines.model;
 
-import mines.model.hint.SafeCheck;
 import java.util.Random;
 import mines.commons.MinesPack;
 import mines.commons.NewBoardPack;
 import mines.model.board.Board;
 import mines.model.hint.DefuseMine;
 import mines.model.hint.HintControl;
+import mines.model.hint.SafeCheck;
 
 /**
  * Model z Model-View-Controller jest pewną reprezentacją problemu bądź logiki
@@ -16,46 +16,27 @@ import mines.model.hint.HintControl;
  */
 public class Model {
 
-    /**
-     * Moduł obsługuje stan czasu
-     */
+    /** Moduł obsługuje stan czasu */
     private final Time time;
-
-    /**
-     * Obsługuje funkcje planszy.
-     */
+    /** Obsługuje funkcje planszy. */
     private Board board;
-
-    /**
-     * Losowanie seed dla generatora seed
-     */
+    /** Losowanie seed dla generatora seed */
     private final Random rand = new Random();
-
-    /**
-     * Przechowuje aktualny stan gry
-     */
+    /** Przechowuje aktualny stan gry */
     private Status status = Status.BEGUN;
-
-    /**
-     * Generacja paczek dla View
-     */
+    /** Generacja paczek dla View */
     private PackConverter packConverter;
-    /**
-     * Wyswietlanie podpowiedzi
-     */
+    /** Wyswietlanie podpowiedzi */
     private HintControl hintControl;
-    /**
-     * Rozbrajanie min
-     */
+    /** Rozbrajanie min*/
     private DefuseMine defuseMine;
-    /**
-     * Stan czy był pierwszy bez ruch
-     */
+    /** Stan czy był pierwszy bez ruch*/
     private SafeCheck safeCheck;
+    /** Przechowuje informacje o ostatniej konfiguracji planszy*/
     private NewBoardPack lastGameConfig;
 
     /**
-     * KOstruktor tworzy pierwsza rozgrywke wyswietlna. Oraz inicjalizuje
+     * Kostruktor tworzy pierwsza rozgrywke wyswietlna. Oraz inicjalizuje
      * odliczanie czasu.
      */
     public Model() {
@@ -203,18 +184,33 @@ public class Model {
         }
     }
     
+    /**
+     * Przywraca status gry PLAYING. Konczy status END lub HINT.
+     */
     public void endHindOrPausa(){
         status=Status.PLAYING;
     }
 
+    /**
+     * Do sprawdzenia statusu gry
+     * @return true jeżeli gra zakończyła się wygraną
+     */
     public boolean isWin() {
         return status == Status.WIN;
     }
 
+    /**
+     * Do sprawdzenia statusu gry
+     * @return true jeżeli gra zakończyła się przegraną
+     */
     public boolean isLose() {
         return status == Status.LOSE;
     }
 
+    /**
+     * Do sprawdzenia statusu gry
+     * @return true jeżeli gra jest w stanie pauzy
+     */
     public boolean isPausa() {
         return status == Status.PAUSE;
     }

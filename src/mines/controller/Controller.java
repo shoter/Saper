@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mines.controller;
 
 import java.awt.event.ActionEvent;
@@ -44,7 +39,8 @@ public class Controller {
     }
 
     /**
-     * Ustawia zegar przerwan.
+     * Ustawia zegar przerwan dla zegara odliczajacego czas i inicjalizuje zegar
+     * do wskazowki pokazywania min.
      */
     private void setTimer() {
         timer = new Timer(Constans.ONE_SECOND, (ActionEvent event) -> {
@@ -66,9 +62,7 @@ public class Controller {
     private void addListeners() {
 
         //Obsługa akcji tworzenia nowej planszy
-        view.addNewBoardListener((NewBoardEvent e) -> {
-            startNewGame(e.newBoard);
-        });
+        view.addNewBoardListener((NewBoardEvent e) -> startNewGame(e.newBoard));
         //Obsługa akcji zamykania okna przez Exit
         view.addExitListener((ActionEvent e) -> {
             java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(new java.awt.event.WindowEvent(view, java.awt.event.WindowEvent.WINDOW_CLOSING));
@@ -107,9 +101,8 @@ public class Controller {
     }
 
     /**
-     * Tworzy nową rozgrywkę. Metoda obsługuje tworzenie kolejnych map oprócz
-     * pierwszej która tworzy się na początku gry. Tworzenie rozgrywki w oparciu
-     * o info z newBoard. Zmiana rozmiarów widoku.
+     * Tworzy nową rozgrywkę. Tworzenie rozgrywki w oparciu o info z newBoard.
+     * Zmiana rozmiarów widoku.
      */
     private void startNewGame(NewBoardPack newBoard) {
         model.startNewGame(newBoard);
@@ -118,7 +111,6 @@ public class Controller {
         view.setSafeCheckEnable(true);
         view.drawSaperPanel(model.getPack());
         view.updateFacePanel(model.isWin(), model.isLose());
-        //checkGameEnd();
     }
 
     /**
@@ -129,7 +121,6 @@ public class Controller {
         view.drawSaperPanel(model.getPack());
         view.setSafeCheckEnable(true);
         view.updateFacePanel(model.isWin(), model.isLose());
-        //checkGameEnd();
     }
 
     /**
@@ -156,7 +147,7 @@ public class Controller {
     private class PanelListener implements MouseListener {
 
         /**
-         * Obsługa wciśniecia klawisza.
+         * Obsługa wciśniecia klawisza myszki.
          *
          * @param e
          */
@@ -201,6 +192,10 @@ public class Controller {
         public void mouseExited(MouseEvent arg0) {
         }
 
+        /**
+         * Obsługa podniesienia myszki. Zmienia twarz.
+         * @param e 
+         */
         @Override
         public void mouseReleased(MouseEvent e) {
             view.updateFacePanel(false);

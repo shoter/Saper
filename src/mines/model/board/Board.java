@@ -1,25 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mines.model.board;
 
 import java.util.Random;
 
 /**
- *
+ * Klasa przedstawia plansze rozgrywki. Metody do jej obsługi.
+ * 
  * @author wojciech
  */
 public class Board {
-
+    /** Pola planszy*/
     final private Field[][] fields;
+    /** Wyskosc planszy*/
     final private int h;
+    /** Szerokość planszy*/
     final private int w;
+    /** Ilosc min na planszy*/
     final private int m;
+    /** Ilosc min nieodkrytych */
     private int fieldsUncovered;
+    /** Ilosc min zaflagowanych*/
     private int fieldsMarked;
+    /** Generator losowy*/
     final Random rand = new Random();
+    /** Generator planszy */
     final BoardGenerator boardGener;
 
     /**
@@ -87,38 +91,82 @@ public class Board {
         fields[y][x].setMark(!fields[y][x].isMarked());
     }
 
+    /**
+     * 
+     * @param y
+     * @param x
+     * @return true jeżeli mina jest na polu (x,y).
+     */
     public boolean isFieldMined(final int y, final int x) {
         return fields[y][x].isMined();
     }
 
+    /**
+     * 
+     * @param y
+     * @param x
+     * @return true jeżeli pole jest zasłonięte.
+     */
     public boolean isFieldCovered(final int y, final int x) {
         return fields[y][x].isCovered();
     }
 
+    /**
+     * 
+     * @param y
+     * @param x
+     * @return true jeżeli pole zostało oflagowane
+     */
     public boolean isFieldMarked(final int y, final int x) {
         return fields[y][x].isMarked();
     }
 
+    /**
+     * 
+     * @param y
+     * @param x
+     * @return ilość min wokół pola.
+     */
     public int getFieldDeg(final int y, final int x) {
         return fields[y][x].getDeg();
     }
 
+    /**
+     * 
+     * @return szerokosc planszy.
+     */
     public int getWidth() {
         return w;
     }
 
+    /**
+     * 
+     * @return wysokosc planszy.
+     */
     public int getHeight() {
         return h;
     }
 
+    /**
+     * 
+     * @return ilość pol nieodkrytych
+     */
     public int getFieldsUncovered() {
         return fieldsUncovered;
     }
 
+    /**
+     * 
+     * @return ilość pol oflagowanych
+     */
     public int getFieldsMarked() {
         return fieldsMarked;
     }
 
+    /**
+     * 
+     * @return ilość min na planszy.
+     */
     public int getNumOfMines() {
         return m;
     }

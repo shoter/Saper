@@ -10,13 +10,19 @@ import mines.commons.Constans;
  * @author wojciech
  */
 public class ImgFacesLoader {
-        final private Image[] images;
+    /** Zmienna przechowuje grafiki twarzy */
+    final private Image[] images;
 
     public ImgFacesLoader() {
         images = new Image[Constans.NUMB_OF_FACES];
         load();
     }
 
+    /** 
+     * Zwraca twarz o zadanycm indeksie 
+     * @param ind indeks twwarzy
+     * @return grafika
+     */
     public Image getImage(final int ind) {
         return images[ind];
     }

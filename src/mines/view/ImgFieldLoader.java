@@ -10,7 +10,7 @@ import mines.commons.Constans;
  * @author wojciech
  */
 public class ImgFieldLoader {
-        final private Image[] images;
+    final private Image[] images;
 
     public ImgFieldLoader() {
         images = new Image[Constans.NUMB_OF_IMAGES];

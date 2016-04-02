@@ -4,7 +4,7 @@ package mines.model.board;
 import java.util.Random;
 
 /**
- *
+ * Klasa obsługuje generacje min na planszy.
  * @author wojciech
  */
 public class BoardGenerator {
@@ -18,10 +18,11 @@ public class BoardGenerator {
     }
 
     /**
+     * Metoda ustawia miny na planszy.
      * Mechanizm moreMines działa w ten sposob że gdy jest wiecej min niż połowa
      * to łatwiej jest losować gdzie min nie ma
      *
-     * @param seed
+     * @param seed Seed dla generatora liczb losowych.
      */
     public void setMines(final long seed) {
         Random rand = new Random(seed);
@@ -63,9 +64,9 @@ public class BoardGenerator {
      * Ustawia na wszystkich polach miny.
      */
     private void setAllMines() {
-        for (int i = 0; i < fields.length; i++) {
-            for (int j = 0; j < fields[i].length; j++) {
-                fields[i][j].setMine(true);
+        for (Field[] field : fields) {
+            for (Field field1 : field) {
+                field1.setMine(true);
             }
         }
     }

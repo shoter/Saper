@@ -8,8 +8,9 @@ import mines.commons.Constans;
  * @author wojciech
  */
 public class DefuseMine {
-
+    /** Ile razy wskazowka zostala wykorzystana */
     private int numberOfDefuse = 0;
+    /** Czy wskazowka zostala uaktywniona w rozgrywce*/
     private final boolean defuseEnable;
 
     public DefuseMine(final boolean defuseEnable) {

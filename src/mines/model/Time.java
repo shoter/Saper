@@ -2,7 +2,7 @@
 package mines.model;
 
 /**
- *
+ * Klasa obsługuje stan czasu rozgrywki.
  * @author wojciech
  */
 public class Time {

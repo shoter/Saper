@@ -1,6 +1,5 @@
 package mines.view;
 
-import mines.view.dialogs.CustomDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -11,6 +10,7 @@ import mines.commons.MinesPack;
 import mines.commons.NewBoardPack;
 import mines.controller.NewBoardListener;
 import mines.controller.events.NewBoardEvent;
+import mines.view.dialogs.CustomDialog;
 import mines.view.dialogs.DefuseDialog;
 import mines.view.dialogs.EndGameDialog;
 import mines.view.dialogs.StartGameDialog;
@@ -20,8 +20,9 @@ import mines.view.dialogs.StartGameDialog;
  * @author wojciech
  */
 public class View extends javax.swing.JFrame {
-
+    /** Lista eventow tworzenia nowej planszy*/
     EventListenerList list = new EventListenerList();
+    /** Przechowuje informacje o ostatniej rozgrywce*/
     NewBoardPack lastBoard = NewBoardPack.BEGINNER_PACK;
 
     /**
@@ -38,38 +39,32 @@ public class View extends javax.swing.JFrame {
         setSaperSize(lastBoard.height, lastBoard.width);
     }
 
+    /**
+     * Uruchamia panel startowy gry.  
+     */
     public void showStartGameDialog() {
         startGameDialog.setVisible(true);
         fireNewBoardEvent(startGameDialog.getNewBoardPack());
-
     }
 
+    /**
+     * Ustawiam odpowiedzi na akcje.
+     */
     private void setListeners() {
-        customButton.addActionListener((ActionEvent e) -> {
-            customDialog.setVisible(true);
-        });
+        //Uruchomienie wyboru wlasnej planszy*/
+        customButton.addActionListener((ActionEvent e) -> customDialog.setVisible(true));
 
-        customDialog.addOkButtonListener((ActionEvent e) -> {
-            fireNewBoardEvent(customDialog.getNewBoardPack());
-        });
-
-        beginnerButton.addActionListener((ActionEvent e) -> {
-            fireNewBoardEvent(NewBoardPack.BEGINNER_PACK);
-        });
-
-        mediumButton.addActionListener((ActionEvent e) -> {
-            fireNewBoardEvent(NewBoardPack.MEDIUM_PACK);
-        });
-
-        expertButton.addActionListener((ActionEvent e) -> {
-            fireNewBoardEvent(NewBoardPack.EXPERT_PACK);
-        });
+        //Wybory nowej planszy
+        customDialog.addOkButtonListener((ActionEvent e) -> fireNewBoardEvent(customDialog.getNewBoardPack()));
+        beginnerButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(NewBoardPack.BEGINNER_PACK));
+        mediumButton.addActionListener((ActionEvent e) ->  fireNewBoardEvent(NewBoardPack.MEDIUM_PACK));
+        expertButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(NewBoardPack.EXPERT_PACK));
+        newGameButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(lastBoard));
         
+        //Listener wydarzen klikniecia w twarz.
         facePanel1.addMouseListener(new FacePanelListener());
-        
-        newGameButton.addActionListener((ActionEvent e) -> {
-            fireNewBoardEvent(lastBoard);
-        });
+
+        //Listener zmiany stylu
         modernButton.addActionListener((ActionEvent e) -> {
             facePanel1.changeStyle(false);
             facePanel1.drawSaperFace(false, false);
@@ -81,9 +76,12 @@ public class View extends javax.swing.JFrame {
 
     }
 
+    /**
+     * 
+     * @param nbl 
+     */
     public void addNewBoardListener(NewBoardListener nbl) {
         list.add(NewBoardListener.class, nbl);
-
     }
 
     final protected void fireNewBoardEvent(NewBoardPack newBoard) {
@@ -367,17 +365,21 @@ public class View extends javax.swing.JFrame {
             facePanel1.drawSaperFace(false,false);
         }
 
+        @Override
         public void mouseClicked(MouseEvent e) {
 
         }
 
+        @Override
         public void mouseEntered(MouseEvent e) {
 
         }
 
+        @Override
         public void mouseExited(MouseEvent arg0) {
         }
 
+        @Override
         public void mouseReleased(MouseEvent e) {
             facePanel1.drawSaperFace(false);
             facePanel1.drawSaperFace(false,false);

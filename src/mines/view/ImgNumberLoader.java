@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mines.view;
 
 import java.awt.Image;
@@ -14,7 +10,7 @@ import mines.commons.Constans;
  * @author wojciech
  */
 public class ImgNumberLoader {
-        final private Image[] images;
+    final private Image[] images;
 
     public ImgNumberLoader() {
         images = new Image[Constans.NUMB_OF_NUMBERS];

@@ -1,19 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mines.model;
 
 import mines.commons.MinesPack;
 import mines.model.board.Board;
 
 /**
+ * Klasa obsługuje konwersje Board do formy zapewniającej wyświetlanie w module
+ * widoku. 
  *
  * @author wojciech
  */
 public class PackConverter {
-    
+
     private final Board board;
 
     public PackConverter(Board board) {
@@ -21,7 +18,7 @@ public class PackConverter {
     }
 
     /**
-     * Paczka standardowa
+     * Paczka standardowa.
      *
      * @param status
      * @return
@@ -90,7 +87,7 @@ public class PackConverter {
                 }
             }
         }
-        return new MinesPack(tab,board.getFieldsMarked(), board.getNumOfMines() );
+        return new MinesPack(tab, board.getFieldsMarked(), board.getNumOfMines());
     }
 
     /**
@@ -101,9 +98,9 @@ public class PackConverter {
      */
     public MinesPack getPauseMinesPack(Status status) {
         byte[][] tab = new byte[board.getHeight()][board.getWidth()];
-        for (int i = 0; i < tab.length; i++) {
+        for (byte[] tab1 : tab) {
             for (int j = 0; j < tab[0].length; j++) {
-                tab[i][j] = 12;
+                tab1[j] = 12;
             }
         }
 

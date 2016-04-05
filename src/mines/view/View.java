@@ -12,6 +12,7 @@ import mines.commons.MinesPack;
 import mines.commons.NewBoardPack;
 import mines.controller.NewBoardListener;
 import mines.controller.events.NewBoardEvent;
+import mines.view.dialogs.AboutGameDialog;
 import mines.view.dialogs.CustomDialog;
 import mines.view.dialogs.DefuseDialog;
 import mines.view.dialogs.EndGameDialog;
@@ -40,6 +41,7 @@ public class View extends javax.swing.JFrame {
         endGameDialog = new EndGameDialog(this, true);
         defuseDialog = new DefuseDialog(this, true);
         startGameDialog = new StartGameDialog(this, true);
+        aboutGameDialog=new AboutGameDialog(this,false);
 
         initComponents();
         setListeners();
@@ -82,6 +84,9 @@ public class View extends javax.swing.JFrame {
             facePanel1.changeStyle(true);
             facePanel1.drawSaperFace(false, false);
         });
+        
+        //Uruchomienie panelu o grze
+        this.aboutGameButton.addActionListener(e->aboutGameDialog.setVisible(true));
 
     }
 
@@ -191,7 +196,6 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jMenuItem2 = new javax.swing.JMenuItem();
         facePanel1 = new mines.view.panels.FacePanel();
@@ -202,6 +206,7 @@ public class View extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         newGameButton = new javax.swing.JMenuItem();
         pauseGameButton = new javax.swing.JMenuItem();
+        aboutGameButton = new javax.swing.JMenuItem();
         endGameButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         beginnerButton = new javax.swing.JMenuItem();
@@ -211,8 +216,8 @@ public class View extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         safeMoveButton = new javax.swing.JMenuItem();
         showMinesButton = new javax.swing.JMenuItem();
-        oldStyleButton = new javax.swing.JRadioButtonMenuItem();
         modernButton = new javax.swing.JRadioButtonMenuItem();
+        oldStyleButton = new javax.swing.JRadioButtonMenuItem();
 
         jMenuItem2.setText("jMenuItem2");
 
@@ -256,6 +261,9 @@ public class View extends javax.swing.JFrame {
         pauseGameButton.setText("Wstrzymaj");
         jMenu1.add(pauseGameButton);
 
+        aboutGameButton.setText("O grze");
+        jMenu1.add(aboutGameButton);
+
         endGameButton.setText("Zakończ");
         jMenu1.add(endGameButton);
 
@@ -267,11 +275,6 @@ public class View extends javax.swing.JFrame {
         jMenu2.add(beginnerButton);
 
         mediumButton.setText("Średni");
-        mediumButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mediumButtonActionPerformed(evt);
-            }
-        });
         jMenu2.add(mediumButton);
 
         expertButton.setText("Trudny");
@@ -291,14 +294,14 @@ public class View extends javax.swing.JFrame {
         showMinesButton.setText("Pokaż miny");
         jMenu3.add(showMinesButton);
 
+        buttonGroup2.add(modernButton);
+        modernButton.setText("Nowoczesny styl");
+        jMenu3.add(modernButton);
+
         buttonGroup2.add(oldStyleButton);
         oldStyleButton.setSelected(true);
         oldStyleButton.setText("Stary styl");
         jMenu3.add(oldStyleButton);
-
-        buttonGroup2.add(modernButton);
-        modernButton.setText("Nowoczesny styl");
-        jMenu3.add(modernButton);
 
         jMenuBar1.add(jMenu3);
 
@@ -310,42 +313,37 @@ public class View extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(minesPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(timePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(facePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(flagsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(flagsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(facePanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(flagsPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(facePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(flagsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(timePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(minesPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mediumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mediumButtonActionPerformed
-
-    }//GEN-LAST:event_mediumButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem aboutGameButton;
     private javax.swing.JMenuItem beginnerButton;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JMenuItem customButton;
     private javax.swing.JMenuItem endGameButton;
@@ -371,6 +369,7 @@ public class View extends javax.swing.JFrame {
     private final EndGameDialog endGameDialog;
     private final DefuseDialog defuseDialog;
     private final StartGameDialog startGameDialog;
+    private final AboutGameDialog aboutGameDialog;
 
     private class FacePanelListener implements MouseListener {
 

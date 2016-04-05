@@ -2,8 +2,6 @@ package mines.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.awt.event.MouseListener;
 import javax.swing.Timer;
 import mines.commons.Constans;

@@ -2,6 +2,8 @@ package mines.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.awt.event.MouseListener;
 import javax.swing.Timer;
 import mines.commons.Constans;
@@ -44,9 +46,11 @@ public class Controller {
      */
     private void setTimer() {
         timer = new Timer(Constans.ONE_SECOND, (ActionEvent event) -> {
-            view.updateSaperTime(model.getTime());
-            model.incrementTime();
-            view.drawSaperPanel(model.getPack());
+            if (!(model.isPausa() || model.isLose() || model.isWin())) {
+                view.updateSaperTime(model.getTime());
+                model.incrementTime();
+                view.drawSaperPanel(model.getPack());
+            }
         });
         timer.start();
 
@@ -168,8 +172,10 @@ public class Controller {
                     view.updateFacePanel(true);
                     model.checkField(eY, eX);
                 }
+                view.setSafeCheckEnable(false);
             } else if (e.getButton() == MouseEvent.BUTTON3) {
                 model.markField(eY, eX);
+                view.setSafeCheckEnable(false);
             }
             checkGameEnd();
 
@@ -194,7 +200,7 @@ public class Controller {
 
         /**
          * Obsługa podniesienia myszki. Zmienia twarz.
-         * @param e 
+         * @param e
          */
         @Override
         public void mouseReleased(MouseEvent e) {

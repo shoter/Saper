@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mines.view.dialogs;
 
 import java.awt.event.ActionEvent;
@@ -46,6 +42,7 @@ public class StartGameDialog extends javax.swing.JDialog {
         inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), cancelName);
         ActionMap actionMap = getRootPane().getActionMap();
         actionMap.put(cancelName, new AbstractAction() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 doClose(RET_CANCEL);
             }
@@ -67,7 +64,7 @@ public class StartGameDialog extends javax.swing.JDialog {
         return temp;
     }
 
-    private final void setListeners() {
+    private void setListeners() {
         this.customButton.addActionListener((ActionEvent e) -> {
             this.customDialog.setVisible(true);
         });
@@ -78,6 +75,7 @@ public class StartGameDialog extends javax.swing.JDialog {
 
     public void addExitListener(ActionListener al) {
         this.cancelButton.addActionListener(al);
+        
     }
 
     /**
@@ -189,7 +187,7 @@ public class StartGameDialog extends javax.swing.JDialog {
      * Closes the dialog
      */
     private void closeDialog(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_closeDialog
-        doClose(RET_CANCEL);
+ 
     }//GEN-LAST:event_closeDialog
 
     private void doClose(int retStatus) {

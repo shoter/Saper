@@ -80,6 +80,8 @@ public class Model {
         if (status == Status.BEGUN) {
             status = Status.PLAYING;
         }
+        if(board.isFieldMarked(y, x))
+            return;
         if (board.isFieldMined(y, x) == true) {
             status = Status.LOSE;
         }

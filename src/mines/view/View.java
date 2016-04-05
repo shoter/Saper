@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import javax.swing.event.EventListenerList;
 import mines.commons.Constans;
 import mines.commons.MinesPack;
@@ -20,9 +22,14 @@ import mines.view.dialogs.StartGameDialog;
  * @author wojciech
  */
 public class View extends javax.swing.JFrame {
-    /** Lista eventow tworzenia nowej planszy*/
+
+    /**
+     * Lista eventow tworzenia nowej planszy
+     */
     EventListenerList list = new EventListenerList();
-    /** Przechowuje informacje o ostatniej rozgrywce*/
+    /**
+     * Przechowuje informacje o ostatniej rozgrywce
+     */
     NewBoardPack lastBoard = NewBoardPack.BEGINNER_PACK;
 
     /**
@@ -40,7 +47,7 @@ public class View extends javax.swing.JFrame {
     }
 
     /**
-     * Uruchamia panel startowy gry.  
+     * Uruchamia panel startowy gry.
      */
     public void showStartGameDialog() {
         startGameDialog.setVisible(true);
@@ -57,12 +64,14 @@ public class View extends javax.swing.JFrame {
         //Wybory nowej planszy
         customDialog.addOkButtonListener((ActionEvent e) -> fireNewBoardEvent(customDialog.getNewBoardPack()));
         beginnerButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(NewBoardPack.BEGINNER_PACK));
-        mediumButton.addActionListener((ActionEvent e) ->  fireNewBoardEvent(NewBoardPack.MEDIUM_PACK));
+        mediumButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(NewBoardPack.MEDIUM_PACK));
         expertButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(NewBoardPack.EXPERT_PACK));
         newGameButton.addActionListener((ActionEvent e) -> fireNewBoardEvent(lastBoard));
-        
+
         //Listener wydarzen klikniecia w twarz.
         facePanel1.addMouseListener(new FacePanelListener());
+        
+        this.startGameDialog.addWindowListener(new WindowCloseListener(this));
 
         //Listener zmiany stylu
         modernButton.addActionListener((ActionEvent e) -> {
@@ -77,8 +86,8 @@ public class View extends javax.swing.JFrame {
     }
 
     /**
-     * 
-     * @param nbl 
+     *
+     * @param nbl
      */
     public void addNewBoardListener(NewBoardListener nbl) {
         list.add(NewBoardListener.class, nbl);
@@ -184,6 +193,7 @@ public class View extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jMenuItem2 = new javax.swing.JMenuItem();
         facePanel1 = new mines.view.panels.FacePanel();
         minesPanel1 = new mines.view.panels.MinesPanel();
         timePanel1 = new mines.view.panels.TimePanel();
@@ -194,15 +204,17 @@ public class View extends javax.swing.JFrame {
         pauseGameButton = new javax.swing.JMenuItem();
         endGameButton = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        beginnerButton = new javax.swing.JRadioButtonMenuItem();
-        mediumButton = new javax.swing.JRadioButtonMenuItem();
-        expertButton = new javax.swing.JRadioButtonMenuItem();
+        beginnerButton = new javax.swing.JMenuItem();
+        mediumButton = new javax.swing.JMenuItem();
+        expertButton = new javax.swing.JMenuItem();
         customButton = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         safeMoveButton = new javax.swing.JMenuItem();
         showMinesButton = new javax.swing.JMenuItem();
         oldStyleButton = new javax.swing.JRadioButtonMenuItem();
         modernButton = new javax.swing.JRadioButtonMenuItem();
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -217,8 +229,6 @@ public class View extends javax.swing.JFrame {
             facePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 33, Short.MAX_VALUE)
         );
-
-        minesPanel1.setPreferredSize(new java.awt.Dimension(220, 220));
 
         javax.swing.GroupLayout minesPanel1Layout = new javax.swing.GroupLayout(minesPanel1);
         minesPanel1.setLayout(minesPanel1Layout);
@@ -253,16 +263,17 @@ public class View extends javax.swing.JFrame {
 
         jMenu2.setText("Tryb");
 
-        buttonGroup1.add(beginnerButton);
-        beginnerButton.setSelected(true);
         beginnerButton.setText("Łatwy");
         jMenu2.add(beginnerButton);
 
-        buttonGroup1.add(mediumButton);
         mediumButton.setText("Średni");
+        mediumButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mediumButtonActionPerformed(evt);
+            }
+        });
         jMenu2.add(mediumButton);
 
-        buttonGroup1.add(expertButton);
         expertButton.setText("Trudny");
         jMenu2.add(expertButton);
 
@@ -327,21 +338,26 @@ public class View extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mediumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mediumButtonActionPerformed
+
+    }//GEN-LAST:event_mediumButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButtonMenuItem beginnerButton;
+    private javax.swing.JMenuItem beginnerButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JMenuItem customButton;
     private javax.swing.JMenuItem endGameButton;
-    private javax.swing.JRadioButtonMenuItem expertButton;
+    private javax.swing.JMenuItem expertButton;
     private mines.view.panels.FacePanel facePanel1;
     private mines.view.panels.FlagsPanel flagsPanel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButtonMenuItem mediumButton;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem mediumButton;
     private mines.view.panels.MinesPanel minesPanel1;
     private javax.swing.JRadioButtonMenuItem modernButton;
     private javax.swing.JMenuItem newGameButton;
@@ -362,7 +378,7 @@ public class View extends javax.swing.JFrame {
         public void mousePressed(MouseEvent e) {
             fireNewBoardEvent(lastBoard);
             facePanel1.drawSaperFace(true);
-            facePanel1.drawSaperFace(false,false);
+            facePanel1.drawSaperFace(false, false);
         }
 
         @Override
@@ -382,7 +398,47 @@ public class View extends javax.swing.JFrame {
         @Override
         public void mouseReleased(MouseEvent e) {
             facePanel1.drawSaperFace(false);
-            facePanel1.drawSaperFace(false,false);
+            facePanel1.drawSaperFace(false, false);
+        }
+    }
+
+    /**
+     * Klasa zapewnia zamkniecie sapera po zamknieciu krzyżykiem okna
+     * startowego.
+     */
+    private class WindowCloseListener implements WindowListener {
+
+        private final View view;
+        public WindowCloseListener(View view){
+            this.view=view;
+        }
+        @Override
+        public void windowOpened(WindowEvent e) {
+        }
+
+        @Override
+        public void windowClosing(WindowEvent e) {
+            java.awt.Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(new java.awt.event.WindowEvent(view, java.awt.event.WindowEvent.WINDOW_CLOSING));
+        }
+
+        @Override
+        public void windowClosed(WindowEvent e) {
+        }
+
+        @Override
+        public void windowIconified(WindowEvent e) {
+        }
+
+        @Override
+        public void windowDeiconified(WindowEvent e) {
+        }
+
+        @Override
+        public void windowActivated(WindowEvent e) {
+        }
+
+        @Override
+        public void windowDeactivated(WindowEvent e) {
         }
     }
 }

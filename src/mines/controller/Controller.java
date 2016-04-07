@@ -161,10 +161,12 @@ public class Controller {
             int eX = (e.getX() / Constans.FIELD_SIZE);
             if (e.getButton() == MouseEvent.BUTTON1) {
 
-                if (model.defuseField(eY, eX)) {
+                if (model.defuseFieldEnable(eY, eX)) {
                     view.updateFacePanel(false);
                     if (view.getDefuseDecision() == false || model.canDefuse() == false) {
                         model.checkField(eY, eX);
+                    } else {
+                        model.defuseField(eY, eX);
                     }
                 } else {
                     view.updateFacePanel(true);

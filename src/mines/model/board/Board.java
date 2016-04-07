@@ -1,29 +1,45 @@
-
 package mines.model.board;
 
 import java.util.Random;
 
 /**
  * Klasa przedstawia plansze rozgrywki. Metody do jej obsługi.
- * 
+ *
  * @author wojciech
  */
 public class Board {
-    /** Pola planszy*/
+
+    /**
+     * Pola planszy
+     */
     final private Field[][] fields;
-    /** Wyskosc planszy*/
+    /**
+     * Wyskosc planszy
+     */
     final private int h;
-    /** Szerokość planszy*/
+    /**
+     * Szerokość planszy
+     */
     final private int w;
-    /** Ilosc min na planszy*/
-    final private int m;
-    /** Ilosc min nieodkrytych */
+    /**
+     * Ilosc min na planszy
+     */
+    private int m;
+    /**
+     * Ilosc min nieodkrytych
+     */
     private int fieldsUncovered;
-    /** Ilosc min zaflagowanych*/
+    /**
+     * Ilosc min zaflagowanych
+     */
     private int fieldsMarked;
-    /** Generator losowy*/
+    /**
+     * Generator losowy
+     */
     final Random rand = new Random();
-    /** Generator planszy */
+    /**
+     * Generator planszy
+     */
     final BoardGenerator boardGener;
 
     /**
@@ -62,7 +78,7 @@ public class Board {
             return false;
         }
         fields[y][x].setMark(false);
-        fields[y][x].uncover();
+        fields[y][x].setCover(false);
         fieldsUncovered--;
         if (fields[y][x].getDeg() != 0) {
             return true;
@@ -75,6 +91,58 @@ public class Board {
             }
         }
         return true;
+    }
+
+    /**
+     * Rozbraja mine. Aktualizuje pola dokoła tak jakby mina została usunięta.
+     * Pole y,x musi posiadać minę.
+     *
+     * @param y
+     * @param x
+     */
+    public void defuseField(int y, int x) {
+        if (fields[y][x].isMined() == false) {
+            return;
+        }
+        fields[y][x].setMine(false);
+        reduceFieldsDegDefuse(y,x);
+        updateFieldsDefuse(y,x);
+        m--;
+    }
+    
+    /**
+     * Zmniejsza stopnie pol wokol pola ktore ma byc rozminowane.
+     * @param y
+     * @param x 
+     */
+    private void reduceFieldsDegDefuse(int y,int x){
+        for (int i = y - 1; i <= y + 1; i++) {
+            for (int j = x - 1; j <= x + 1; j++) {
+                if (i >= 0 && i < h && j >= 0 && j < w) {
+                    fields[i][j].setDeg(fields[i][j].getDeg() - 1);
+                }
+            }
+        }
+    }
+    
+    /**
+     * Aktualizuje pole po rozbrojeniu. Odkrywa jeszcze raz by odslonić porawnie zera.
+     * @param y
+     * @param x 
+     */
+    private void updateFieldsDefuse(int y,int x){
+        for (int i = y - 1; i <= y + 1; i++) {
+            for (int j = x - 1; j <= x + 1; j++) {
+                if (i >= 0 && i < h && j >= 0 && j < w && i!=y && j!=x) {
+                    if(fields[i][j].isCovered()==false){
+                        fieldsUncovered++;
+                        fields[i][j].setCover(true);
+                        uncoverField(i,j);
+                    }
+                                
+                }
+            }
+        }
     }
 
     /**
@@ -92,7 +160,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @param y
      * @param x
      * @return true jeżeli mina jest na polu (x,y).
@@ -102,7 +170,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @param y
      * @param x
      * @return true jeżeli pole jest zasłonięte.
@@ -112,7 +180,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @param y
      * @param x
      * @return true jeżeli pole zostało oflagowane
@@ -122,7 +190,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @param y
      * @param x
      * @return ilość min wokół pola.
@@ -132,7 +200,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @return szerokosc planszy.
      */
     public int getWidth() {
@@ -140,7 +208,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @return wysokosc planszy.
      */
     public int getHeight() {
@@ -148,7 +216,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @return ilość pol nieodkrytych
      */
     public int getFieldsUncovered() {
@@ -156,7 +224,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @return ilość pol oflagowanych
      */
     public int getFieldsMarked() {
@@ -164,7 +232,7 @@ public class Board {
     }
 
     /**
-     * 
+     *
      * @return ilość min na planszy.
      */
     public int getNumOfMines() {

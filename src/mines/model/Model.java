@@ -16,23 +16,41 @@ import mines.model.hint.SafeCheck;
  */
 public class Model {
 
-    /** Moduł obsługuje stan czasu */
+    /**
+     * Moduł obsługuje stan czasu
+     */
     private final Time time;
-    /** Obsługuje funkcje planszy. */
+    /**
+     * Obsługuje funkcje planszy.
+     */
     private Board board;
-    /** Losowanie seed dla generatora seed */
+    /**
+     * Losowanie seed dla generatora seed
+     */
     private final Random rand = new Random();
-    /** Przechowuje aktualny stan gry */
+    /**
+     * Przechowuje aktualny stan gry
+     */
     private Status status = Status.BEGUN;
-    /** Generacja paczek dla View */
+    /**
+     * Generacja paczek dla View
+     */
     private PackConverter packConverter;
-    /** Wyswietlanie podpowiedzi */
+    /**
+     * Wyswietlanie podpowiedzi
+     */
     private HintControl hintControl;
-    /** Rozbrajanie min*/
+    /**
+     * Rozbrajanie min
+     */
     private DefuseMine defuseMine;
-    /** Stan czy był pierwszy bez ruch*/
+    /**
+     * Stan czy był pierwszy bez ruch
+     */
     private SafeCheck safeCheck;
-    /** Przechowuje informacje o ostatniej konfiguracji planszy*/
+    /**
+     * Przechowuje informacje o ostatniej konfiguracji planszy
+     */
     private NewBoardPack lastGameConfig;
 
     /**
@@ -80,13 +98,14 @@ public class Model {
         if (status == Status.BEGUN) {
             status = Status.PLAYING;
         }
-        if(board.isFieldMarked(y, x))
+        if (board.isFieldMarked(y, x)) {
             return;
+        }
         if (board.isFieldMined(y, x) == true) {
             status = Status.LOSE;
         }
         board.uncoverField(y, x);
-        if (board.getFieldsUncovered() == board.getNumOfMines()&&status!=Status.LOSE) {
+        if (board.getFieldsUncovered() == board.getNumOfMines() && status != Status.LOSE) {
             status = Status.WIN;
         }
     }
@@ -114,18 +133,28 @@ public class Model {
      * @param x
      * @return true jeżeli może rozbroić.
      */
-    public boolean defuseField(final int y, final int x) {
+    public boolean defuseFieldEnable(final int y, final int x) {
         if (!(status == Status.PLAYING || status == Status.BEGUN)) {
             return false;
         }
         if (board.isFieldMined(y, x) == true) {
-
-            if (defuseMine.canDefuse() == true) {
-                defuseMine.defuseMine();
-                return true;
-            }
+            return defuseMine.canDefuse();
         }
         return false;
+    }
+
+    /**
+     * Rozbraja mine.
+     *
+     * @param y
+     * @param x
+     */
+    public void defuseField(final int y, final int x) {
+        if (defuseFieldEnable(y, x) == true) {
+            defuseMine.defuseMine();
+            board.defuseField(y, x);
+            checkField(y,x);
+        }
     }
 
     /**
@@ -185,16 +214,17 @@ public class Model {
             time.incrementSecond();
         }
     }
-    
+
     /**
      * Przywraca status gry PLAYING. Konczy status END lub HINT.
      */
-    public void endHindOrPausa(){
-        status=Status.PLAYING;
+    public void endHindOrPausa() {
+        status = Status.PLAYING;
     }
 
     /**
      * Do sprawdzenia statusu gry
+     *
      * @return true jeżeli gra zakończyła się wygraną
      */
     public boolean isWin() {
@@ -203,6 +233,7 @@ public class Model {
 
     /**
      * Do sprawdzenia statusu gry
+     *
      * @return true jeżeli gra zakończyła się przegraną
      */
     public boolean isLose() {
@@ -211,12 +242,13 @@ public class Model {
 
     /**
      * Do sprawdzenia statusu gry
+     *
      * @return true jeżeli gra jest w stanie pauzy
      */
     public boolean isPausa() {
         return status == Status.PAUSE;
     }
-    
+
     /**
      * Obsługa wskaz. odkrycia min
      */
@@ -229,7 +261,8 @@ public class Model {
 
     /**
      * Zwraca decyzje czy graczowi udało się rozbroić minę
-     * @return 
+     *
+     * @return
      */
     public boolean canDefuse() {
         return this.defuseMine.getDefuseDecision();
@@ -237,7 +270,8 @@ public class Model {
 
     /**
      * Zwraca czas w sekundach od rozpoczecia pojedynczej rozgrywki
-     * @return 
+     *
+     * @return
      */
     public int getTime() {
         return time.getTime();

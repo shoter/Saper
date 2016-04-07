@@ -41,7 +41,7 @@ public class View extends javax.swing.JFrame {
         endGameDialog = new EndGameDialog(this, true);
         defuseDialog = new DefuseDialog(this, true);
         startGameDialog = new StartGameDialog(this, true);
-        aboutGameDialog=new AboutGameDialog(this,false);
+        aboutGameDialog=new AboutGameDialog(this,true);
 
         initComponents();
         setListeners();

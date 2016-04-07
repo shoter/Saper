@@ -22,7 +22,7 @@ public class DefuseMine {
      */
     public void defuseMine() {
 
-        if (numberOfDefuse < Constans.NUMBER_OF_HINTS && defuseEnable == true) {
+        if (numberOfDefuse < Constans.DEFUSE_MINE_NUMBER && defuseEnable == true) {
             numberOfDefuse++;
         }
     }
@@ -40,6 +40,6 @@ public class DefuseMine {
      * @return 
      */
     public boolean canDefuse() {
-        return (numberOfDefuse < Constans.NUMBER_OF_HINTS && defuseEnable == true);
+        return (numberOfDefuse < Constans.DEFUSE_MINE_NUMBER && defuseEnable == true);
     }
 }

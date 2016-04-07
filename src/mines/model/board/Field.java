@@ -63,10 +63,11 @@ public class Field {
     }
 
     /**
-     * Odkrywa pole
+     * Ustawia pole
+     * @param isCovered
      */
-    public void uncover() {
-        covered = false;
+    public void setCover(boolean isCovered) {
+        covered = isCovered;
     }
 
     /**

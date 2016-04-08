@@ -150,10 +150,23 @@ public class Model {
      * @param x
      */
     public void defuseField(final int y, final int x) {
+        if (!(status == Status.PLAYING || status == Status.BEGUN)) {
+            return;
+        }
+        if (status == Status.BEGUN) {
+            status = Status.PLAYING;
+        }
+        if (board.isFieldMarked(y, x)) {
+            return;
+        }
+
         if (defuseFieldEnable(y, x) == true) {
+
             defuseMine.defuseMine();
             board.defuseField(y, x);
-            checkField(y,x);
+            if (board.getNumOfMines() == 0) {
+                status = Status.WIN;
+            }
         }
     }
 

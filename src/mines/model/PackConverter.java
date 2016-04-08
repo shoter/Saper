@@ -5,7 +5,7 @@ import mines.model.board.Board;
 
 /**
  * Klasa obsługuje konwersje Board do formy zapewniającej wyświetlanie w module
- * widoku. 
+ * widoku.
  *
  * @author wojciech
  */

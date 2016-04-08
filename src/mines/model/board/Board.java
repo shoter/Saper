@@ -105,17 +105,22 @@ public class Board {
             return;
         }
         fields[y][x].setMine(false);
-        reduceFieldsDegDefuse(y,x);
-        updateFieldsDefuse(y,x);
         m--;
+        if (m < fieldsMarked) {
+            reduceMarkedField();
+        }
+        reduceFieldsDegDefuse(y, x);
+        uncoverField(y, x);
+        updateFields();
     }
-    
+
     /**
      * Zmniejsza stopnie pol wokol pola ktore ma byc rozminowane.
+     *
      * @param y
-     * @param x 
+     * @param x
      */
-    private void reduceFieldsDegDefuse(int y,int x){
+    private void reduceFieldsDegDefuse(int y, int x) {
         for (int i = y - 1; i <= y + 1; i++) {
             for (int j = x - 1; j <= x + 1; j++) {
                 if (i >= 0 && i < h && j >= 0 && j < w) {
@@ -124,22 +129,52 @@ public class Board {
             }
         }
     }
-    
+
     /**
-     * Aktualizuje pole po rozbrojeniu. Odkrywa jeszcze raz by odslonić porawnie zera.
-     * @param y
-     * @param x 
+     * Aktualizuje pole. Jezeli jest zasloniete pole wokoł którego jest pole ze
+     * stopniem rownym 0 oznacza to że trzeba to pole odslonić.
      */
-    private void updateFieldsDefuse(int y,int x){
+    private void updateFields() {
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                if (fields[i][j].isCovered() == true) {
+                    if (isUpdateFieldEnable(i, j)) {
+                        uncoverField(i, j);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     *
+     * @param y
+     * @param x
+     * @return true jeżeli wokoł pola (y,x) jest odsloniete pole ze stopniem 0
+     */
+    private boolean isUpdateFieldEnable(int y, int x) {
         for (int i = y - 1; i <= y + 1; i++) {
             for (int j = x - 1; j <= x + 1; j++) {
-                if (i >= 0 && i < h && j >= 0 && j < w && i!=y && j!=x) {
-                    if(fields[i][j].isCovered()==false){
-                        fieldsUncovered++;
-                        fields[i][j].setCover(true);
-                        uncoverField(i,j);
+                if (i >= 0 && i < h && j >= 0 && j < w) {
+                    if (fields[i][j].isCovered() == false && fields[i][j].getDeg() == 0) {
+                        return true;
                     }
-                                
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Zabiera jedna flagę z pola. W sytuacji gdy jest postawione więcej flag
+     * niż jest min bo mina została rozbrojona.
+     */
+    private void reduceMarkedField() {
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                if (fields[i][j].isMarked()) {
+                    markField(i, j);
+                    return;
                 }
             }
         }
@@ -157,6 +192,7 @@ public class Board {
         }
         fieldsMarked += (fields[y][x].isMarked() ? -1 : 1);
         fields[y][x].setMark(!fields[y][x].isMarked());
+        updateFields();
     }
 
     /**

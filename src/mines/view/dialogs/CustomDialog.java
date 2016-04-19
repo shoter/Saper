@@ -137,10 +137,13 @@ public class CustomDialog extends javax.swing.JDialog {
         jLabel4.setText("Min");
 
         heightSpinner.setModel(new javax.swing.SpinnerNumberModel(Constans.MIN_H,Constans.MIN_H ,Constans.MAX_H, 1));
+        heightSpinner.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         widthSpinner.setModel(new javax.swing.SpinnerNumberModel(Constans.MIN_W,Constans.MIN_W,Constans.MAX_W, 1));
+        widthSpinner.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         minesSpinner.setModel(new javax.swing.SpinnerNumberModel(Constans.BEGINNER_M,1,(int)(Constans.MIN_H*Constans.MIN_W*Constans.MAX_PROB_MINES), 1));
+        minesSpinner.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -145,6 +145,11 @@
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.SpinnerNumberModel(Constans.MIN_H,Constans.MIN_H ,Constans.MAX_H, 1)" type="code"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="widthSpinner">
@@ -152,12 +157,22 @@
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.SpinnerNumberModel(Constans.MIN_W,Constans.MIN_W,Constans.MAX_W, 1)" type="code"/>
         </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="minesSpinner">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.SpinnerNumberModel(Constans.BEGINNER_M,1,(int)(Constans.MIN_H*Constans.MIN_W*Constans.MAX_PROB_MINES), 1)" type="code"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder bevelType="1"/>
+          </Border>
         </Property>
       </Properties>
     </Component>

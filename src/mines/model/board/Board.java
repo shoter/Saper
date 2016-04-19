@@ -1,6 +1,7 @@
 package mines.model.board;
 
 import java.util.Random;
+import mines.commons.NewBoardPack;
 
 /**
  * Klasa przedstawia plansze rozgrywki. Metody do jej obsługi.
@@ -16,15 +17,15 @@ public class Board {
     /**
      * Wyskosc planszy
      */
-    final private int h;
+    final private int height;
     /**
      * Szerokość planszy
      */
-    final private int w;
+    final private int width;
     /**
      * Ilosc min na planszy
      */
-    private int m;
+    private int mines;
     /**
      * Ilosc min nieodkrytych
      */
@@ -37,32 +38,18 @@ public class Board {
      * Generator losowy
      */
     final Random rand = new Random();
-    /**
-     * Generator planszy
-     */
-    final BoardGenerator boardGener;
 
     /**
      * Inicjalizacja wartosciami poczatkowymi
      *
-     * @param h
-     * @param w
-     * @param m
+     * @param nbp
      */
-    public Board(final int h, final int w, final int m) {
-
-        fields = new Field[h][w];
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
-                fields[i][j] = new Field();
-            }
-        }
-        this.h = h;
-        this.m = m;
-        this.w = w;
-        fieldsUncovered = h * w;
-        boardGener = new BoardGenerator(fields, m);
-        boardGener.setMines(rand.nextLong());
+    public Board(NewBoardPack nbp) {
+        this.height = nbp.height;
+        this.mines = nbp.mines;
+        this.width = nbp.width;
+        fieldsUncovered = height * width;
+        fields=BoardGenerator.getBoard(nbp);
     }
 
     /**
@@ -85,7 +72,7 @@ public class Board {
         }
         for (int i = y - 1; i <= y + 1; i++) {
             for (int j = x - 1; j <= x + 1; j++) {
-                if (i >= 0 && i < h && j >= 0 && j < w) {
+                if (i >= 0 && i < height && j >= 0 && j < width) {
                     uncoverField(i, j);
                 }
             }
@@ -105,8 +92,8 @@ public class Board {
             return;
         }
         fields[y][x].setMine(false);
-        m--;
-        if (m < fieldsMarked) {
+        mines--;
+        if (mines < fieldsMarked) {
             reduceMarkedField();
         }
         reduceFieldsDegDefuse(y, x);
@@ -123,7 +110,7 @@ public class Board {
     private void reduceFieldsDegDefuse(int y, int x) {
         for (int i = y - 1; i <= y + 1; i++) {
             for (int j = x - 1; j <= x + 1; j++) {
-                if (i >= 0 && i < h && j >= 0 && j < w) {
+                if (i >= 0 && i < height && j >= 0 && j < width) {
                     fields[i][j].setDeg(fields[i][j].getDeg() - 1);
                 }
             }
@@ -135,8 +122,8 @@ public class Board {
      * stopniem rownym 0 oznacza to że trzeba to pole odslonić.
      */
     private void updateFields() {
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 if (fields[i][j].isCovered() == true) {
                     if (isUpdateFieldEnable(i, j)) {
                         uncoverField(i, j);
@@ -155,7 +142,7 @@ public class Board {
     private boolean isUpdateFieldEnable(int y, int x) {
         for (int i = y - 1; i <= y + 1; i++) {
             for (int j = x - 1; j <= x + 1; j++) {
-                if (i >= 0 && i < h && j >= 0 && j < w) {
+                if (i >= 0 && i < height && j >= 0 && j < width) {
                     if (fields[i][j].isCovered() == false && fields[i][j].getDeg() == 0) {
                         return true;
                     }
@@ -170,8 +157,8 @@ public class Board {
      * niż jest min bo mina została rozbrojona.
      */
     private void reduceMarkedField() {
-        for (int i = 0; i < h; i++) {
-            for (int j = 0; j < w; j++) {
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 if (fields[i][j].isMarked()) {
                     markField(i, j);
                     return;
@@ -187,7 +174,7 @@ public class Board {
      * @param x
      */
     public void markField(final int y, final int x) {
-        if (fieldsMarked >= m && fields[y][x].isMarked() == false) {
+        if (fieldsMarked >= mines && fields[y][x].isMarked() == false) {
             return;
         }
         fieldsMarked += (fields[y][x].isMarked() ? -1 : 1);
@@ -240,7 +227,7 @@ public class Board {
      * @return szerokosc planszy.
      */
     public int getWidth() {
-        return w;
+        return width;
     }
 
     /**
@@ -248,7 +235,7 @@ public class Board {
      * @return wysokosc planszy.
      */
     public int getHeight() {
-        return h;
+        return height;
     }
 
     /**
@@ -272,6 +259,6 @@ public class Board {
      * @return ilość min na planszy.
      */
     public int getNumOfMines() {
-        return m;
+        return mines;
     }
 }

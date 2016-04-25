@@ -69,7 +69,7 @@ public class Model {
      */
     public final void startNewGame(NewBoardPack boardPack) {
         status = Status.BEGUN;
-        board = new Board(boardPack.height, boardPack.width, boardPack.mines);
+        board=new Board(boardPack);
         time.setTime(0);
         packConverter = new PackConverter(board);
         hintControl = new HintControl(boardPack.showMineEnable);

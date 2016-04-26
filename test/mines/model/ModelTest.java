@@ -19,12 +19,24 @@ public class ModelTest {
     }
 
     @Test
-    public void startDefaultGameTest() {
+    public void wrongStartTest() {
+        System.out.print("wrongStartTest");
+        boolean passed = false;
+        try
+        {
+        NewBoardPack pack = new NewBoardPack(-123, -123, -123, false, false);
         Model gameModel = new Model();
-       
-        
-        
-
+        gameModel.startNewGame(pack);
+        }
+        catch(Exception e)
+        {
+            System.out.println(" passed");
+            passed = true;
+        }
+        finally
+        {
+            assertTrue(passed);
+        }
     }
     
 }

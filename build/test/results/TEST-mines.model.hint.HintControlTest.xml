@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.board.FieldTest" skipped="0" tests="4" time="0.078" timestamp="2016-04-26T00:24:00">
+<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.hint.HintControlTest" skipped="0" tests="2" time="0.095" timestamp="2016-04-26T00:24:00">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -52,7 +52,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.board.FieldTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.board.FieldTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher6266830953522081257.properties propsfile=F:\programowanie\Java\Saper\build\junit8278924536772112851.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.hint.HintControlTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.hint.HintControlTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher2148435181222587986.properties propsfile=F:\programowanie\Java\Saper\build\junit4891037215217838125.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -378,14 +378,10 @@
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="mines.model.board.FieldTest" name="setMarkTest" time="0.002" />
-  <testcase classname="mines.model.board.FieldTest" name="setCoverTest" time="0.0" />
-  <testcase classname="mines.model.board.FieldTest" name="setDegTest" time="0.0" />
-  <testcase classname="mines.model.board.FieldTest" name="setMineTest" time="0.0" />
-  <system-out><![CDATA[setMark passed
-setCover passed
-setDeg passed
-setMine passed
+  <testcase classname="mines.model.hint.HintControlTest" name="noHintTest" time="0.002" />
+  <testcase classname="mines.model.hint.HintControlTest" name="useHintTest" time="0.0" />
+  <system-out><![CDATA[noHintTest passed
+useHintTest passed
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

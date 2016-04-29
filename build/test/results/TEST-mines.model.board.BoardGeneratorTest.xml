@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="Damian-PC" name="mines.model.board.BoardGeneratorTest" skipped="0" tests="3" time="0.082" timestamp="2016-04-26T00:23:59">
+<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.board.BoardGeneratorTest" skipped="0" tests="3" time="0.079" timestamp="2016-04-26T00:31:33">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -52,7 +52,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.board.BoardGeneratorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.board.BoardGeneratorTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher262743495067595516.properties propsfile=F:\programowanie\Java\Saper\build\junit5718593568060184548.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.board.BoardGeneratorTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.board.BoardGeneratorTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher4860148871836760449.properties propsfile=F:\programowanie\Java\Saper\build\junit186836059902102443.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -379,13 +379,10 @@
   </properties>
   <testcase classname="mines.model.board.BoardGeneratorTest" name="minesCountTest" time="0.004" />
   <testcase classname="mines.model.board.BoardGeneratorTest" name="boundsTest" time="0.001" />
-  <testcase classname="mines.model.board.BoardGeneratorTest" name="tooMuchMinesTest" time="0.006">
-    <failure message="expected:&lt;1&gt; but was:&lt;900&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;1&gt; but was:&lt;900&gt;
-	at mines.model.board.BoardGeneratorTest.tooMuchMinesTest(BoardGeneratorTest.java:69)
-</failure>
-  </testcase>
+  <testcase classname="mines.model.board.BoardGeneratorTest" name="tooMuchMinesTest" time="0.002" />
   <system-out><![CDATA[minesCountTest passed
 boundsTest passed
-tooMuchMinesTest]]></system-out>
+tooMuchMinesTest passed
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

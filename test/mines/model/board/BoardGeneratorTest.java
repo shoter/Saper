@@ -33,7 +33,7 @@ public class BoardGeneratorTest {
     @Test
     public void minesCountTest() {
         System.out.print("minesCountTest");
-        NewBoardPack nbp = new NewBoardPack(30, 30, 666, true, true);
+        NewBoardPack nbp = new NewBoardPack(30, 30, 899, true, true);
         Field[][] fields = BoardGenerator.getBoard(nbp);
         
         int mineCount = 0;
@@ -46,7 +46,7 @@ public class BoardGeneratorTest {
                     mineCount++;
             }
         
-        assertEquals(666, mineCount);
+        assertEquals(899, mineCount);
         System.out.println(" passed");
     }
     

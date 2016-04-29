@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.hint.HintControlTest" skipped="0" tests="2" time="0.095" timestamp="2016-04-26T00:24:00">
+<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.hint.HintControlTest" skipped="0" tests="2" time="0.077" timestamp="2016-04-26T00:31:34">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -52,7 +52,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.hint.HintControlTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.hint.HintControlTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher2148435181222587986.properties propsfile=F:\programowanie\Java\Saper\build\junit4891037215217838125.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.hint.HintControlTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.hint.HintControlTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher7293676603752418935.properties propsfile=F:\programowanie\Java\Saper\build\junit4662824404580279509.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -211,7 +211,6 @@
     <property name="org.openide.major.version" value="IDE/1" />
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
     <property name="netbeans.user" value="C:\Users\Damian\AppData\Roaming\NetBeans\8.1" />
-    <property name="tests.failed" value="true" />
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="C:\Users\Damian\AppData\Local\Temp\" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
@@ -294,9 +293,9 @@
     <property name="built-jar.properties" value="F:\programowanie\Java\Saper\build\built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
+    <property name="libs.jpa2-persistence.src" value="" />
     <property name="annotation.processing.enabled" value="true" />
     <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
-    <property name="libs.jpa2-persistence.src" value="" />
     <property name="libs.jsf20.src" value="" />
     <property name="libs.jpa20-persistence.src" value="" />
     <property name="libs.jsf12.src" value="" />
@@ -320,8 +319,8 @@
     <property name="nb.junit.single" value="false" />
     <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="netbeans.dirs" value="F:\programowanie\programy\netbeans\nb;F:\programowanie\programy\netbeans\ergonomics;F:\programowanie\programy\netbeans\ide;F:\programowanie\programy\netbeans\extide;F:\programowanie\programy\netbeans\java;F:\programowanie\programy\netbeans\apisupport;F:\programowanie\programy\netbeans\webcommon;F:\programowanie\programy\netbeans\websvccommon;F:\programowanie\programy\netbeans\enterprise;F:\programowanie\programy\netbeans\mobility;F:\programowanie\programy\netbeans\profiler;F:\programowanie\programy\netbeans\python;F:\programowanie\programy\netbeans\php;F:\programowanie\programy\netbeans\identity;F:\programowanie\programy\netbeans\harness;F:\programowanie\programy\netbeans\cnd;F:\programowanie\programy\netbeans\cndext;F:\programowanie\programy\netbeans\dlight;F:\programowanie\programy\netbeans\groovy;F:\programowanie\programy\netbeans\extra;F:\programowanie\programy\netbeans\javacard;F:\programowanie\programy\netbeans\javafx" />
-    <property name="libs.jsf20.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.jstl.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.jsf20.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
     <property name="libs.metro.src" value="" />
     <property name="libs.absolutelayout.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\AbsoluteLayout.jar" />
@@ -343,12 +342,12 @@
     <property name="libs.hibernate4-persistence.src" value="" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="libs.restlib.javadoc" value="" />
-    <property name="libs.JAXB-ENDORSED.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\jaxb\api\jaxb-api.jar" />
     <property name="nb.internal.action.name" value="test" />
+    <property name="libs.JAXB-ENDORSED.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\jaxb\api\jaxb-api.jar" />
     <property name="libs.javaee-api-7.0.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.eclipselink.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\eclipselink\eclipselink.jar;F:\programowanie\programy\netbeans\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;F:\programowanie\programy\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
-    <property name="libs.beans-binding.javadoc" value="F:\programowanie\programy\netbeans\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.beans-binding.javadoc" value="F:\programowanie\programy\netbeans\java\docs\beansbinding-1.2.1-doc.zip" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="libs.CopyLibs.classpath" value="F:\programowanie\programy\netbeans\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="F:\programowanie\programy\netbeans\ide\modules\org-apache-commons-logging.jar;F:\programowanie\programy\netbeans\java\modules\ext\cglib-2.2.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
@@ -359,8 +358,8 @@
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="dist.archive.excludes" value="" />
     <property name="libs.testng.javadoc" value="F:\programowanie\programy\netbeans\platform\docs\testng-6.8.1-javadoc.zip" />
-    <property name="libs.PostgreSQLDriver.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
     <property name="user.script" value="" />
+    <property name="libs.PostgreSQLDriver.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
@@ -371,8 +370,8 @@
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
     <property name="file.encoding" value="Cp1252" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
-    <property name="javadoc.nonavbar" value="false" />
     <property name="jdkBug6558476" value="false" />
+    <property name="javadoc.nonavbar" value="false" />
     <property name="libs.spring-webmvc4.0.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />

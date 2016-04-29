@@ -17,10 +17,18 @@ import static org.junit.Assert.*;
  * @author Damian
  */
 public class FieldTest {
+    
+    Field instance;
+    
+    @Before
+    public void init()
+    {
+        instance = new Field();
+    }
+    
     @Test
     public void setMineTest() {
         System.out.print("setMine");
-        Field instance = new Field();
         
         instance.setMine(true);
         assertEquals(true, instance.isMined());
@@ -34,7 +42,6 @@ public class FieldTest {
     @Test
     public void setMarkTest() {
         System.out.print("setMark");
-        Field instance = new Field();
         
         instance.setMark(true);
         assertEquals(true, instance.isMarked());
@@ -48,7 +55,6 @@ public class FieldTest {
     @Test
     public void setCoverTest() {
         System.out.print("setCover");
-        Field instance = new Field();
         
         instance.setCover(true);
         assertEquals(true, instance.isCovered());
@@ -62,7 +68,6 @@ public class FieldTest {
     @Test
     public void setDegTest() {
         System.out.print("setDeg");
-        Field instance = new Field();
         for(int i = 0;i <= 9;++i)
         {
             instance.setDeg(i);

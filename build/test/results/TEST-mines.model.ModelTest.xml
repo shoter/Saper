@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.ModelTest" skipped="0" tests="1" time="0.084" timestamp="2016-04-26T00:23:58">
+<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.ModelTest" skipped="0" tests="1" time="0.096" timestamp="2016-04-26T00:31:32">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -52,7 +52,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.ModelTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.ModelTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher6015386830682578738.properties propsfile=F:\programowanie\Java\Saper\build\junit4053941539760742865.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.ModelTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.ModelTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher115060779090314041.properties propsfile=F:\programowanie\Java\Saper\build\junit5901438534850398682.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />

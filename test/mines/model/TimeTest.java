@@ -19,8 +19,15 @@ import static org.junit.Assert.*;
 public class TimeTest {
     
     private static final int SecondsInDay = 86400;
+    private Time time;
     
     public TimeTest() {
+    }
+    
+    @Before
+    public void init()
+    {
+        time = new Time();
     }
     
     /**
@@ -30,7 +37,6 @@ public class TimeTest {
     @Test
     public void setTimeTest() {
         System.out.print("setTime");
-        Time time = new Time();
         for(int i = 0;i < SecondsInDay; ++i)
         {
             time.setTime(i);
@@ -44,7 +50,6 @@ public class TimeTest {
     public void incrementTest()
     {
         System.out.print("incrementSecond");
-        Time time = new Time();
         for(int i = 0;i < SecondsInDay; ++i)
         {
             assertEquals(i, time.getTime());

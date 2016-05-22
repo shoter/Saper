@@ -17,6 +17,7 @@ import mines.view.dialogs.CustomDialog;
 import mines.view.dialogs.DefuseDialog;
 import mines.view.dialogs.EndGameDialog;
 import mines.view.dialogs.StartGameDialog;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -191,6 +192,10 @@ public class View extends javax.swing.JFrame {
         defuseDialog.setVisible(true);
         return defuseDialog.getReturnStatus() == 1;
 
+    }
+    
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(null, message, "Uwaga", JOptionPane.ERROR_MESSAGE);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

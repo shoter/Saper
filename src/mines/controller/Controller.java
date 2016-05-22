@@ -9,6 +9,7 @@ import mines.commons.NewBoardPack;
 import mines.controller.events.NewBoardEvent;
 import mines.model.Model;
 import mines.view.View;
+import java.awt.Toolkit; // do dzwieku
 
 /**
  * Kontroler ze wzorca Model-View-Controller przyjmuje dane wejściowe od
@@ -131,6 +132,7 @@ public class Controller {
      */
     private void checkGameEnd() {
         if ((model.isLose() || model.isWin())) {
+            Toolkit.getDefaultToolkit().beep(); // dzwiek
             view.updateFacePanel(false);
             view.updateFacePanel(model.isWin(), model.isLose());
             view.drawSaperPanel(model.getPack());

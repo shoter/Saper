@@ -83,7 +83,9 @@ public class Controller {
         //Pokazanie wszystkich min.
         view.addHintMinesListener((ActionEvent e) -> {
             if (!model.isPausa()) {
-                model.activHint();
+                if(!model.activHint()){
+                    view.showMessage("Brak dostępnych skanowań!");
+                }
                 hintTimer.start();
             }
             view.drawSaperPanel(model.getPack());

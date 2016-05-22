@@ -192,7 +192,7 @@ public class View extends javax.swing.JFrame {
         return defuseDialog.getReturnStatus() == 1;
 
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -222,6 +222,7 @@ public class View extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(100, 100));
         setResizable(false);
 
         javax.swing.GroupLayout facePanel1Layout = new javax.swing.GroupLayout(facePanel1);
@@ -337,7 +338,6 @@ public class View extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 

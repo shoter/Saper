@@ -107,6 +107,7 @@ public class CustomDialog extends javax.swing.JDialog {
         minesSpinner = new javax.swing.JSpinner();
 
         setTitle("Stwórz własną planszę");
+        setLocation(new java.awt.Point(200, 200));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -209,7 +210,6 @@ public class CustomDialog extends javax.swing.JDialog {
         getRootPane().setDefaultButton(okButton);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed

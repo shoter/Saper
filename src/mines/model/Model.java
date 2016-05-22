@@ -114,7 +114,7 @@ public class Model {
      * Wykonuje pierwszy bezpieczny ruch.
      */
     public void safeCheckField() {
-        if (status != Status.BEGUN || safeCheck.isHintEnable() == false) {
+        if (safeCheck.isHintEnable() == false) {
             return;
         }
         int t_x, t_y;
@@ -265,10 +265,13 @@ public class Model {
     /**
      * Obsługa wskaz. odkrycia min
      */
-    public void activHint() {
+    public boolean activHint() {
         if (hintControl.isHintEnable()) {
             hintControl.useHint();
             status = Status.HINT;
+            return true;
+        } else{
+            return false;
         }
     }
 

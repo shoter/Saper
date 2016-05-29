@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.hint.DefuseMineTest" skipped="0" tests="2" time="0.076" timestamp="2016-04-26T00:31:34">
+<testsuite errors="0" failures="0" hostname="Damian-PC" name="mines.model.hint.DefuseMineTest" skipped="0" tests="2" time="0.089" timestamp="2016-05-29T21:31:35">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -52,7 +52,7 @@
     <property name="copylibs.rebase" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.hint.DefuseMineTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.hint.DefuseMineTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher404735649766584190.properties propsfile=F:\programowanie\Java\Saper\build\junit6412124840990833787.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner mines.model.hint.DefuseMineTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,F:\programowanie\Java\Saper\build\test\results\TEST-mines.model.hint.DefuseMineTest.xml crashfile=F:\programowanie\Java\Saper\build\junitvmwatcher8512619001564427497.properties propsfile=F:\programowanie\Java\Saper\build\junit8147869094801227949.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -81,6 +81,7 @@
     <property name="libs.javaee-api-6.0.classpath" value="F:\programowanie\programy\netbeans\enterprise\modules\ext\javaee-api-6.0.jar" />
     <property name="netbeans.productversion" value="NetBeans IDE 8.1 (Build 201510222201)" />
     <property name="libs.jaxws21.src" value="" />
+    <property name="application.title" value="Mines" />
     <property name="do.archive" value="true" />
     <property name="netbeans.autoupdate.language" value="en" />
     <property name="java.vendor" value="Oracle Corporation" />
@@ -89,6 +90,7 @@
     <property name="javac.debug" value="true" />
     <property name="javadoc.splitindex" value="true" />
     <property name="file.separator" value="\" />
+    <property name="test.IT%20Packages.dir" value="IT Packages" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="mkdist.disabled" value="false" />
     <property name="javac.test.processorpath" value=":build/classes:F:\programowanie\programy\netbeans\platform\modules\ext\junit-4.12.jar:F:\programowanie\programy\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
@@ -108,7 +110,7 @@
     <property name="libs.testng.classpath" value="F:\programowanie\programy\netbeans\platform\modules\ext\testng-6.8.1-dist.jar" />
     <property name="libs.absolutelayout.maven-pom" value="" />
     <property name="ant.java.version" value="1.8" />
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_77\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Oculus\Support\oculus-runtime;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Damian\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\nodejs\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;F:\programowanie\includes\C++\Visual Leak Detector\bin\Win32;F:\programowanie\includes\C++\Visual Leak Detector\bin\Win64;F:\programy\matlab\runtime\win64;F:\programy\matlab\bin;F:\programy\matlab\polyspace\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Damian\AppData\Roaming\npm;F:\programy\saxon\bin;." />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_77\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Oculus\Support\oculus-runtime;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Damian\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\nodejs\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;F:\programowanie\includes\C++\Visual Leak Detector\bin\Win32;F:\programowanie\includes\C++\Visual Leak Detector\bin\Win64;F:\programy\matlab\runtime\win64;F:\programy\matlab\bin;F:\programy\matlab\polyspace\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Windows Live\Shared;C:\Users\Damian\AppData\Roaming\npm;F:\programy\saxon\bin;." />
     <property name="javadoc.author" value="false" />
     <property name="libs.metro.maven-pom" value="" />
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
@@ -131,6 +133,7 @@
     <property name="testng.mode" value="testng" />
     <property name="libs.JAXB-ENDORSED.maven-pom" value="" />
     <property name="libs.eclipselink.maven-pom" value="" />
+    <property name="application.vendor" value="D" />
     <property name="test.binaryincludes" value="&lt;nothing&gt;" />
     <property name="manifest.available" value="true" />
     <property name="libs.primefaces.javadoc" value="" />
@@ -222,6 +225,7 @@
     <property name="have.sources" value="true" />
     <property name="libs.hamcrest.javadoc" value="" />
     <property name="debug.classpath" value=":build/classes" />
+    <property name="javac.external.vm" value="false" />
     <property name="javadoc.private" value="false" />
     <property name="test.src.dir" value="test" />
     <property name="libs.jsf20.classpath" value="F:\programowanie\programy\netbeans\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
@@ -230,6 +234,7 @@
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/Mines.jar" />
     <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="Mines" />
     <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA_WEBCOMMON_WEBEE0416d5123-07df-46ea-bc68-247645f7ce33_fac6453e-d4e5-4bad-9e18-b90d130023ba" />
@@ -284,8 +289,8 @@
     <property name="javac.source" value="1.8" />
     <property name="line.separator" value="&#xd;&#xa;" />
     <property name="java.specification.version" value="1.8" />
-    <property name="libs.jaxws21.maven-pom" value="" />
     <property name="java.vm.info" value="mixed mode" />
+    <property name="libs.jaxws21.maven-pom" value="" />
     <property name="nb.junit.batch" value="true" />
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_77\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_77\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_77\jre\classes" />
@@ -317,16 +322,18 @@
     <property name="libs.junit_4.classpath" value="F:\programowanie\programy\netbeans\platform\modules\ext\junit-4.12.jar" />
     <property name="user.timezone" value="" />
     <property name="nb.junit.single" value="false" />
+    <property name="do.jar" value="true" />
     <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
     <property name="netbeans.dirs" value="F:\programowanie\programy\netbeans\nb;F:\programowanie\programy\netbeans\ergonomics;F:\programowanie\programy\netbeans\ide;F:\programowanie\programy\netbeans\extide;F:\programowanie\programy\netbeans\java;F:\programowanie\programy\netbeans\apisupport;F:\programowanie\programy\netbeans\webcommon;F:\programowanie\programy\netbeans\websvccommon;F:\programowanie\programy\netbeans\enterprise;F:\programowanie\programy\netbeans\mobility;F:\programowanie\programy\netbeans\profiler;F:\programowanie\programy\netbeans\python;F:\programowanie\programy\netbeans\php;F:\programowanie\programy\netbeans\identity;F:\programowanie\programy\netbeans\harness;F:\programowanie\programy\netbeans\cnd;F:\programowanie\programy\netbeans\cndext;F:\programowanie\programy\netbeans\dlight;F:\programowanie\programy\netbeans\groovy;F:\programowanie\programy\netbeans\extra;F:\programowanie\programy\netbeans\javacard;F:\programowanie\programy\netbeans\javafx" />
-    <property name="libs.jstl.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.jsf20.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.jstl.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_77\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
     <property name="libs.metro.src" value="" />
+    <property name="endorsed.classpath" value="" />
     <property name="libs.absolutelayout.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.metro.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\jaxb\activation.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-api.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-extra-api.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-extra.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-rt.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
+    <property name="libs.metro.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\jaxb\activation.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-api.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-extra-api.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-extra.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-rt.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\metro\webservices-tools.jar" />
     <property name="libs.jpa2-persistence.javadoc" value="F:\programowanie\programy\netbeans\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
     <property name="java.class.path" value="F:\programowanie\Java\Saper\build\classes;F:\programowanie\programy\netbeans\platform\modules\ext\junit-4.12.jar;F:\programowanie\programy\netbeans\platform\modules\ext\hamcrest-core-1.3.jar;F:\programowanie\Java\Saper\build\test\classes;F:\programowanie\programy\netbeans\extide\ant\lib\ant-launcher.jar;F:\programowanie\programy\netbeans\extide\ant\lib\ant.jar;F:\programowanie\programy\netbeans\extide\ant\lib\ant-junit.jar;F:\programowanie\programy\netbeans\extide\ant\lib\ant-junit4.jar" />
@@ -342,12 +349,12 @@
     <property name="libs.hibernate4-persistence.src" value="" />
     <property name="libs.hibernate4-support.maven-pom" value="" />
     <property name="libs.restlib.javadoc" value="" />
-    <property name="nb.internal.action.name" value="test" />
     <property name="libs.JAXB-ENDORSED.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\jaxb\api\jaxb-api.jar" />
+    <property name="nb.internal.action.name" value="test" />
     <property name="libs.javaee-api-7.0.javadoc" value="F:\programowanie\programy\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.eclipselink.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\eclipselink\eclipselink.jar;F:\programowanie\programy\netbeans\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;F:\programowanie\programy\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="libs.beans-binding.javadoc" value="F:\programowanie\programy\netbeans\java\docs\beansbinding-1.2.1-doc.zip" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="libs.CopyLibs.classpath" value="F:\programowanie\programy\netbeans\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="F:\programowanie\programy\netbeans\ide\modules\org-apache-commons-logging.jar;F:\programowanie\programy\netbeans\java\modules\ext\cglib-2.2.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;F:\programowanie\programy\netbeans\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
@@ -358,14 +365,14 @@
     <property name="libs.JAXB-ENDORSED.src" value="" />
     <property name="dist.archive.excludes" value="" />
     <property name="libs.testng.javadoc" value="F:\programowanie\programy\netbeans\platform\docs\testng-6.8.1-javadoc.zip" />
-    <property name="user.script" value="" />
     <property name="libs.PostgreSQLDriver.classpath" value="F:\programowanie\programy\netbeans\ide\modules\ext\postgresql-9.2-1002.jdbc4.jar" />
+    <property name="user.script" value="" />
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="F:\programowanie\programy\netbeans\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="mines.Mines" />
-    <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
+    <property name="libs.CopyLibs.src" value="" />
     <property name="libs.jsp-compilation.classpath" value="F:\programowanie\programy\netbeans\extide\ant\lib\ant.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\glassfish-jspparser-4.0.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\jsf-2_2\javax.faces.jar;F:\programowanie\programy\netbeans\enterprise\modules\ext\jstl-api.jar;F:\programowanie\programy\netbeans\extide\ant\lib\ant-launcher.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
     <property name="file.encoding" value="Cp1252" />

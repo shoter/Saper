@@ -33,6 +33,15 @@ public class FieldTest {
         instance.setMine(true);
         assertEquals(true, instance.isMined());
         
+        
+        System.out.println(" passed");
+    }
+    
+    @Test
+    public void unMineTest() {
+        System.out.print("unMine");
+        instance.setMine(true);
+        
         instance.setMine(false);
         assertEquals(false, instance.isMined());
         
@@ -46,6 +55,15 @@ public class FieldTest {
         instance.setMark(true);
         assertEquals(true, instance.isMarked());
         
+        System.out.println(" passed");
+    }
+    
+    @Test
+    public void unMarkTest() {
+        System.out.print("unMark");
+        
+        instance.setMark(true);
+
         instance.setMark(false);
         assertEquals(false, instance.isMarked());
         
@@ -58,6 +76,14 @@ public class FieldTest {
         
         instance.setCover(true);
         assertEquals(true, instance.isCovered());
+        
+        System.out.println(" passed");
+    }
+    
+    @Test
+    public void unCoverTest() {
+        System.out.print("unCover");
+        instance.setCover(true);
         
         instance.setCover(false);
         assertEquals(false, instance.isCovered());

@@ -137,7 +137,7 @@ public class Model {
         if (!(status == Status.PLAYING || status == Status.BEGUN)) {
             return false;
         }
-        if (board.isFieldMined(y, x) == true) {
+        if (board.isFieldMined(y, x) == true && board.isFieldMarked(y, x) == false) {
             return defuseMine.canDefuse();
         }
         return false;
